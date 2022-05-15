@@ -2,15 +2,24 @@ import React from 'react';
 import styled from 'styled-components'
 
 const BoxCarrinho = styled.div`
-    border: 1px solid #000;
-    width: 300px;
-    padding: 10px;
-    min-width: 300px;
+
     .itensCarrinho {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: red;
+        margin: 10px 0;
+        border-bottom: 1px solid #ccc;
+        button {
+          padding: 5px;
+          border: none;
+          border-radius: 5px;
+          background-color: red;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: #900101;
+          }
+        }
     }
 `
 
@@ -19,11 +28,10 @@ export default class Carrinho extends React.Component {
   render() {
     return (
       <BoxCarrinho>
-          <h2>Carrinho:</h2>
           <div className='itensCarrinho'>
-            <span>1x</span>
-            <p>Nome do produto</p>
-            <button>Remover</button>
+            <span>{this.props.qntProduto}x</span>
+            <p>{this.props.nomeProduto}</p>
+            <button onClick={this.props.botaoRemover}>Remover</button>
           </div>
       </BoxCarrinho>
     )
