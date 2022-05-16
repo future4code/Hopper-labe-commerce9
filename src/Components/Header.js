@@ -118,7 +118,11 @@ export default class Header extends React.Component {
                     <h1><span className="a">Buy</span><span className="b">Easy</span></h1>
                     <div className="buscaCarrinho">
                         <div className="inputBusca">
-                            <input type='search' placeholder="Buscar"/>
+                            <input 
+                                type='search' 
+                                placeholder="Buscar" 
+                                onChange={this.props.inputBusca} 
+                                value={this.props.valor}/>
                             <button className="busca">
                                 <img src={Search} />
                             </button>
